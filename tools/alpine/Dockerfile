@@ -88,9 +88,7 @@ RUN set -e && \
 
 FROM alpine:3.9
 
-COPY --from=mirror /etc/apk/repositories /etc/apk/repositories
-COPY --from=mirror /etc/apk/repositories.upstream /etc/apk/repositories.upstream
-COPY --from=mirror /etc/apk/keys /etc/apk/keys/
+COPY --from=mirror /etc/apk/repositories /etc/apk/repositories.upstream /etc/apk/keys /etc/apk/
 COPY --from=mirror /mirror /mirror/
 COPY --from=mirror /go/bin /go/bin/
 COPY --from=mirror /Dockerfile /Dockerfile
